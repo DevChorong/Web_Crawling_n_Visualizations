@@ -5,6 +5,9 @@ Sys.setenv(JAVA_HOME='C:\\Program Files\\Java\\jre1.8.0_201')
 library("KoNLP")
 useSejongDic()
 
+# 사용자이름 에 해당하는 data.frame의 사전을 하나 생성한다.
+mergeUserDic(data.frame("사전이름", "ncn"))
+
 # 나머지 패키지들 import
 
 install.packages("SnowballC")
@@ -22,8 +25,7 @@ library("plyr")
 library("stringr")
 library("ggplot2")
 
-# 사용자이름 에 해당하는 data.frame의 사전을 하나 생성한다.
-mergeUserDic(data.frame("사용자이름", "ncn"))
+
 
 setwd("C:\\Users\\ChoRong\\Desktop\\Base\\04. 개인 연구\\[4]Web_Crawling")
 # Textfile 가져오기
@@ -55,10 +57,10 @@ text_table
 
 # 테이블 형태로 데이터 만들기
 word_count <- table(text_table)
-word_count
+
 # dataFrame 만들기
 terms <- data.frame(word_count)
-terms
+
 
 # 열 이름 바꿔주기
 names(terms) <- c("word", "freq")
@@ -66,8 +68,8 @@ terms
 # 정렬 해주기
 terms <- arrange(terms, desc(freq))
 
-
-wordcloud(words=terms$word, freq=terms$freq, random.order = F, colors=brewer.pal(8, "Dark2"))
+display.brewer.all()
+wordcloud(words=terms$word, freq=terms$freq, random.order = F, colors=brewer.pal(12,"Paired"))
 
 
 
