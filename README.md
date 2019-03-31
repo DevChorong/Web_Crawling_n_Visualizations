@@ -1,5 +1,5 @@
 # Web_Crawling
-we are study web crawling and WordCloud Visualization!!
+i study web crawling and WordCloud Visualizations!!
 <br>
 Data Crawling with Python
-Word Cloud Visualization with R x64
+Word Cloud Visualizations with R x64
