@@ -66,9 +66,10 @@ terms <- arrange(terms, desc(freq))
 
 terms
 
+
 wordcloud(words=terms$word, freq=terms$freq, random.order = F, colors=brewer.pal(12,"Paired"))
 
-
+display.brewer.all()
 
 
 
